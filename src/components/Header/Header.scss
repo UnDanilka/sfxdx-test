@@ -8,5 +8,6 @@
   border-bottom: 1px solid black;
   border-bottom: 1px solid #cdd2dd;
   backdrop-filter: blur(8px);
+  z-index: 1;
   @import "../Button/Button.scss";
 }
