@@ -1,2 +1,9 @@
 .app {
+  background: #f0f5f5;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  @import "../Header/Header.scss";
+  @import "../Footer/Footer.scss";
 }
