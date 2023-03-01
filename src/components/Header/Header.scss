@@ -1,5 +1,13 @@
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   height: 100px;
   width: 100%;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cdd2dd;
+  backdrop-filter: blur(8px);
+  @import "../Button/Button.scss";
+  @import "../Logo/Logo.scss";
 }
