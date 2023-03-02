@@ -1,23 +1,17 @@
-import { useEffect } from "react"
+// import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { connectWallet } from "../../redux/web3Slice"
 import { IButtonProps } from "../../types"
 
 const Button = ({ position, width, height, fontSize }: IButtonProps) => {
-  // const { ethereum } = window
+  const account = useSelector((state: any) => state.web3.account)
+  const dispatch = useDispatch()
 
-  // const connectWallet = async () => {
-  //   try {
-  //     if (!ethereum) {
-  //       return console.log("error", "Wallet is not installed")
-  //     } else {
-  //       const address = await ethereum.request({
-  //         method: "eth_requestAccounts",
-  //       })
-  //       return address[0]
-  //     }
-  //   } catch (e) {
-  //     console.log("error", "Error with wallet connecting")
-  //   }
-  // }
+  const handleConnectWallet = () => {
+    dispatch(connectWallet())
+  }
+
+  console.log("account", account)
 
   // useEffect(() => {
   //   const { ethereum } = window
@@ -36,7 +30,7 @@ const Button = ({ position, width, height, fontSize }: IButtonProps) => {
     <div
       className="button"
       style={{ position, width, height, fontSize }}
-      // onClick={connectWallet}
+      onClick={handleConnectWallet}
     >
       <div className="button_label">Connect Wallet</div>
     </div>
