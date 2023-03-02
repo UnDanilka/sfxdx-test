@@ -1,4 +1,4 @@
-import { ellipseData } from "../../utils"
+import { ellipseData } from "../../utils/utils"
 import Ellipse from "../Ellipse/Ellipse"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
