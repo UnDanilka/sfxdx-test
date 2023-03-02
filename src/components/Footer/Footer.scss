@@ -4,7 +4,7 @@
   height: 221px;
   background-color: hsl(180, 20%, 95%);
   border-top: 1px solid #cdd2dd;
-  color: rgba(103, 103, 103, 1);
+  color: rgb(153, 153, 153);
   z-index: 1;
 
   &_main {
@@ -16,10 +16,11 @@
       margin: 50px 70px 0;
       justify-content: center;
       &_links {
+        color: #676767;
         position: absolute;
         top: -10px;
         left: 0;
-        font-family: Gilroy;
+        font-family: sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -37,5 +38,6 @@
   &_copyright {
     display: flex;
     justify-content: center;
+    font-family: Inter;
   }
 }
