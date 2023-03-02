@@ -5,3 +5,5 @@ export interface IEllipseProps {
   left?: string
   transform: string
 }
+
+export type PositionType = "static" | "absolute"

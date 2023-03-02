@@ -8,6 +8,11 @@ import {
   TOP_COORDS_DOWN,
   TOP_COORDS_UP,
 } from "./constants"
+
+import { ReactComponent as Twitter } from "../assets/twitter.svg"
+import { ReactComponent as Facebook } from "../assets/facebook.svg"
+import { ReactComponent as Instagram } from "../assets/instagram.svg"
+import { ReactComponent as YouTube } from "../assets/youtube.svg"
 export const ellipseData = [
   {
     background: COLOR_BLUE,
@@ -34,3 +39,6 @@ export const ellipseData = [
     transform: ROTATE_RIGHT,
   },
 ]
+
+export const links = ["Privacy policy", "Terms & Conditions", "Cookie Policy"]
+export const socials = [Twitter, Facebook, Instagram, YouTube]
