@@ -1,0 +1,8 @@
+export const LEFT_COORDS = "-20px"
+export const RIGHT_COORDS = "20px"
+export const TOP_COORDS_UP = "63.36px"
+export const TOP_COORDS_DOWN = "725.36px"
+export const ROTATE_LEFT = "rotate(-65.41deg)"
+export const ROTATE_RIGHT = "rotate(-131.25deg)"
+export const COLOR_BLUE = "#b2f1de"
+export const COLOR_GREEN = "#72e25e"
