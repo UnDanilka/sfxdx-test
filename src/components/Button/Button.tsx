@@ -13,19 +13,6 @@ const Button = ({ position, width, height, fontSize }: IButtonProps) => {
 
   console.log("account", account)
 
-  // useEffect(() => {
-  //   const { ethereum } = window
-  //   const showData = (e: any) => console.log(e)
-  //   ethereum.on("accountsChanged", showData)
-  //   ethereum.on("chainChanged", showData)
-  //   return () => {
-  //     ethereum.removeListener("accountsChanged", showData)
-  //     ethereum.removeListener("chainChanged", showData)
-  //   }
-  // }, [])
-
-  //ethereum
-
   return (
     <div
       className="button"
