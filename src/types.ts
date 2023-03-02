@@ -7,3 +7,9 @@ export interface IEllipseProps {
 }
 
 export type PositionType = "static" | "absolute"
+export interface IButtonProps {
+  position: PositionType
+  width: string
+  height: string
+  fontSize: string
+}

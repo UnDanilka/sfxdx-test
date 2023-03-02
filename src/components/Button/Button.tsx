@@ -1,8 +1,8 @@
-import React from "react"
+import { IButtonProps } from "../../types"
 
-const Button = () => {
+const Button = ({ position, width, height, fontSize }: IButtonProps) => {
   return (
-    <div className="button">
+    <div className="button" style={{ position, width, height, fontSize }}>
       <div className="button_label">Connect Wallet</div>
     </div>
   )

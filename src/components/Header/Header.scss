@@ -5,9 +5,31 @@
   position: relative;
   height: 100px;
   width: 100%;
-  border-bottom: 1px solid black;
   border-bottom: 1px solid #cdd2dd;
   backdrop-filter: blur(8px);
   z-index: $zindex;
   @import "../Button/Button.scss";
+}
+
+.header-mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 26px 20px;
+  @import "../Button/Button.scss";
+}
+
+.logo-mobile {
+  width: 98px;
+  height: 16px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    display: none;
+  }
+  .header-mobile {
+    display: flex;
+  }
 }

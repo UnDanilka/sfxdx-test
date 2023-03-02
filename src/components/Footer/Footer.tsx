@@ -1,4 +1,3 @@
-import React from "react"
 import { ReactComponent as Logo } from "../../assets/logo.svg"
 import { PositionType } from "../../types"
 import { links, socials } from "../../utils/utils"
@@ -55,7 +54,7 @@ const Footer = () => {
         {copyrightComponent()}
       </div>
       <div className="footer-mobile">
-        <Logo style={{ marginBottom: "30px" }} />
+        <Logo className="logo-mobile" />
         {linksComponent("static")}
         {socialsComponent("static")}
         {copyrightComponent()}
