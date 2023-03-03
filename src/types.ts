@@ -13,3 +13,10 @@ export interface IButtonProps {
   height: string
   fontSize: string
 }
+
+export interface IWeb3 {
+  web3: {
+    account: string
+    chain: string
+  }
+}

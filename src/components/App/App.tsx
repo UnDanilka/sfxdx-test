@@ -9,8 +9,6 @@ import Header from "../Header/Header"
 function App() {
   const dispatch = useDispatch()
 
-  console.log("rerender")
-
   useEffect(() => {
     const { ethereum } = window
     const handleAccountChange = (accounts: [string]) =>
