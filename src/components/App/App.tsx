@@ -5,6 +5,7 @@ import { ellipseData } from "../../utils/utils"
 import Ellipse from "../Ellipse/Ellipse"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
+import Modal from "../Modal/Modal"
 
 function App() {
   const dispatch = useDispatch()
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="app">
+      <Modal />
       {ellipseData.map((data) => {
         return <Ellipse {...data} />
       })}
