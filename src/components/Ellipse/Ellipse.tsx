@@ -7,8 +7,8 @@ const Ellipse = (props: IEllipseProps) => {
   useEffect(() => {
     const setRandomCoords = () => {
       setPosition({
-        left: Math.floor(Math.random() * window.screen.width),
-        top: Math.floor(Math.random() * window.screen.height),
+        left: Math.floor((Math.random() * window.screen.width) / 2),
+        top: Math.floor((Math.random() * window.screen.height) / 2),
       })
     }
 
