@@ -1,8 +1,17 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { ReactComponent as Close } from "../../assets/close.svg"
+import { IWeb3 } from "../../types"
 
 const Modal = () => {
   const [open, setOpen] = useState(true)
+
+  const chain = useSelector((state: IWeb3) => state.web3.chain)
+  useEffect(() => {
+    if (chain !== "0x5") {
+      setOpen(true)
+    }
+  }, [chain])
 
   const handleClose = () => {
     setOpen(false)

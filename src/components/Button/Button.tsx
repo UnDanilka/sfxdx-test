@@ -10,8 +10,6 @@ const Button = ({ position, width, height, fontSize }: IButtonProps) => {
   const dispatch = useDispatch()
 
   const account = useSelector((state: IWeb3) => state.web3.account)
-  const chain = useSelector((state: IWeb3) => state.web3.chain)
-  console.log("chain", chain)
 
   const handleConnectWallet = () => {
     dispatch(connectWallet())
