@@ -12,32 +12,34 @@ function App() {
 
   useEffect(() => {
     const { ethereum } = window
+    if (ethereum) {
+      const handleAccountChange = (accounts: [string]) =>
+        dispatch(setAccount(accounts[0]))
+      const handleChainChange = (chain: string) => {
+        dispatch(setChain(chain))
+      }
 
-    const handleAccountChange = (accounts: [string]) =>
-      dispatch(setAccount(accounts[0]))
-    const handleChainChange = (chain: string) => {
-      dispatch(setChain(chain))
-    }
+      const getActiveData = async () => {
+        const address = await ethereum.request({
+          method: "eth_accounts",
+        })
 
-    const getActiveData = async () => {
-      const address = await ethereum.request({
-        method: "eth_accounts",
-      })
+        if (address) dispatch(setAccount(address[0]))
+        const chain = await ethereum.request({
+          method: "eth_chainId",
+        })
+        if (chain) dispatch(setChain(chain))
+      }
 
-      if (address) dispatch(setAccount(address[0]))
-      const chain = await ethereum.request({
-        method: "eth_chainId",
-      })
-      if (chain) dispatch(setChain(chain))
-    }
+      getActiveData()
 
-    getActiveData()
+      ethereum.on("accountsChanged", handleAccountChange)
+      ethereum.on("chainChanged", handleChainChange)
 
-    ethereum.on("accountsChanged", handleAccountChange)
-    ethereum.on("chainChanged", handleChainChange)
-    return () => {
-      ethereum.removeListener("accountsChanged", handleAccountChange)
-      ethereum.removeListener("chainChanged", handleChainChange)
+      return () => {
+        ethereum.removeListener("accountsChanged", handleAccountChange)
+        ethereum.removeListener("chainChanged", handleChainChange)
+      }
     }
   }, [dispatch])
 
