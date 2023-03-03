@@ -1,5 +1,5 @@
 import { put, call, takeEvery } from "redux-saga/effects"
-import { setAccount } from "./web3Slice"
+import { setAccount, setChain } from "./web3Slice"
 
 function* getAccount() {
   const { ethereum } = window
@@ -13,7 +13,9 @@ function* getAccount() {
           method: "eth_requestAccounts",
         })
       )
+
       yield put(setAccount(address[0]))
+      yield put(setChain(ethereum.chainId))
     }
   } catch (e) {
     console.log("error", "Error with wallet connecting")

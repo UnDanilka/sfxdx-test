@@ -1,21 +1,30 @@
 import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { setAccount, setChain } from "../../redux/web3Slice"
 import { ellipseData } from "../../utils/utils"
 import Ellipse from "../Ellipse/Ellipse"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
 
 function App() {
+  const dispatch = useDispatch()
+
+  console.log("rerender")
+
   useEffect(() => {
     const { ethereum } = window
-    const handleAccountChange = (e: any) => console.log(e)
-    const handleChainChange = (e: any) => console.log(e)
+    const handleAccountChange = (accounts: [string]) =>
+      dispatch(setAccount(accounts[0]))
+    const handleChainChange = (chain: string) => {
+      dispatch(setChain(chain))
+    }
     ethereum.on("accountsChanged", handleAccountChange)
     ethereum.on("chainChanged", handleChainChange)
     return () => {
       ethereum.removeListener("accountsChanged", handleAccountChange)
       ethereum.removeListener("chainChanged", handleChainChange)
     }
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="app">
