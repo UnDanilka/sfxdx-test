@@ -23,11 +23,12 @@ function App() {
       const address = await ethereum.request({
         method: "eth_accounts",
       })
-      dispatch(setAccount(address[0]))
+
+      if (address) dispatch(setAccount(address[0]))
       const chain = await ethereum.request({
         method: "eth_chainId",
       })
-      dispatch(setChain(chain))
+      if (chain) dispatch(setChain(chain))
     }
 
     getActiveData()
@@ -43,8 +44,8 @@ function App() {
   return (
     <div className="app">
       <Modal />
-      {ellipseData.map((data) => {
-        return <Ellipse {...data} />
+      {ellipseData.map((data, i) => {
+        return <Ellipse {...data} key={i} />
       })}
       <Header />
       <Footer />

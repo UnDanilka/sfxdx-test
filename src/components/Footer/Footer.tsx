@@ -12,8 +12,8 @@ const Footer = () => {
           textAlign: position === "static" ? "center" : "start",
         }}
       >
-        {links.map((link) => (
-          <div>{link}</div>
+        {links.map((link, i) => (
+          <div key={i}>{link}</div>
         ))}
       </div>
     )
@@ -22,8 +22,8 @@ const Footer = () => {
   const socialsComponent = (position: PositionType) => {
     return (
       <div className="footer_main_container_socials" style={{ position }}>
-        {socials.map((Link) => (
-          <Link />
+        {socials.map((Link, i) => (
+          <Link key={i} />
         ))}
       </div>
     )
