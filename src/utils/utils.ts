@@ -42,3 +42,11 @@ export const ellipseData = [
 
 export const links = ["Privacy policy", "Terms & Conditions", "Cookie Policy"]
 export const socials = [Twitter, Facebook, Instagram, YouTube]
+
+export const parseAccount = (account: string) => {
+  const array = account.split("")
+  const first10 = array.slice(0, 10)
+  const last4 = array.slice(-4)
+  const combined = [...first10, ".", ".", ".", ...last4]
+  return combined.join("")
+}
