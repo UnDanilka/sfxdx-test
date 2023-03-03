@@ -4,14 +4,15 @@ import { ReactComponent as Close } from "../../assets/close.svg"
 import { IWeb3 } from "../../types"
 
 const Modal = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   const chain = useSelector((state: IWeb3) => state.web3.chain)
+  const account = useSelector((state: IWeb3) => state.web3.account)
   useEffect(() => {
-    if (chain !== "0x5") {
+    if (account && chain !== "0x5" && chain !== "") {
       setOpen(true)
     }
-  }, [chain])
+  }, [account, chain])
 
   const handleClose = () => {
     setOpen(false)

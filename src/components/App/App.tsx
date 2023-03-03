@@ -12,11 +12,26 @@ function App() {
 
   useEffect(() => {
     const { ethereum } = window
+
     const handleAccountChange = (accounts: [string]) =>
       dispatch(setAccount(accounts[0]))
     const handleChainChange = (chain: string) => {
       dispatch(setChain(chain))
     }
+
+    const getActiveData = async () => {
+      const address = await ethereum.request({
+        method: "eth_accounts",
+      })
+      dispatch(setAccount(address[0]))
+      const chain = await ethereum.request({
+        method: "eth_chainId",
+      })
+      dispatch(setChain(chain))
+    }
+
+    getActiveData()
+
     ethereum.on("accountsChanged", handleAccountChange)
     ethereum.on("chainChanged", handleChainChange)
     return () => {
